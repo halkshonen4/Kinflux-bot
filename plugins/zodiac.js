@@ -2,7 +2,7 @@ let handler = (m, { usedPrefix, command, text }) => {
     if (!text) throw `Example:\n${usedPrefix + command} 2003 02 25`
 
     const date = new Date(text)
-    if (date == 'invalid data input, prueba con el siguiente formato AAAA MM DD Ejemplo: 2003 02 07 ') throw date
+    if (date == 'kinflux bot cant identify this becouse of wrong data input, start with  year then month then date AAAA MM DD Example: 2003 02 07 ') throw date
     const d = new Date()
     const [tahun, bulan, tanggal] = [d.getFullYear(), d.getMonth() + 1, d.getDate()]
     const birth = [date.getFullYear(), date.getMonth() + 1, date.getDate()]
@@ -12,7 +12,7 @@ let handler = (m, { usedPrefix, command, text }) => {
     const age = ageD.getFullYear() - new Date(1970, 0, 1).getFullYear()
 
     const birthday = [tahun + (birth[1] < bulan), ...birth.slice(1)]
-    const cekusia = bulan === birth[1] && tanggal === birth[2] ? `${age} - Feliz cumpleaños 🥳` : age
+    const cekusia = bulan === birth[1] && tanggal === birth[2] ? `${age} - Happy birthday 🥳` : age
 
     const teks = `
 Fecha de nacimiento: : ${birth.join('-')}
