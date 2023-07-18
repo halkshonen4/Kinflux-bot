@@ -11,8 +11,8 @@ let handler = async (m, { conn, usedPrefix, text, isAdmin, isOwner }) => {
         text
     ]
 }
-handler.help = ['mulaiabsen [teks]']
+handler.help = ['kinfluxbotabsent [absent]']
 handler.tags = ['absen']
-handler.command = /^(start|mulai|on|\+)absen$/i
+handler.command = /^(start|mulai|on|\+)absent$/i
 
 module.exports = handler
