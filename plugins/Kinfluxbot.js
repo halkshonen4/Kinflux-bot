@@ -19,7 +19,7 @@ let handler  = async (m, { conn, args, usedPrefix, command }) => {
       auth = true
     }
     conn.on('qr', async qr => {
-      let scan = await parent.sendFile(m.chat, await qrcode.toDataURL(qr, { scale: 8 }), 'qrcode.png', '*🔰 Asian - Bot 🔰*\nㅤㅤㅤㅤ*Ser sub bot*\n\n*Con otro telefono que tengas o en la PC escanea este QR para convertirte en un sub bot*\n\n*1. Haga clic en los tres puntos en la esquina superior derecha*\n*2. Toca WhatsApp Web*\n*3. Escanee este codigo QR*\n*Este código QR expira en 20 segundos!*\n\n*⚠️ No nos hacemos responsable del mal uso que se le pueda dar o si el numero se manda a soporte.. ustedes tienen el deber se seguir al pie de la letra los terminos y condiciones y privacidad (escribe eso y te los dará)*', m)
+      let scan = await parent.sendFile(m.chat, await qrcode.toDataURL(qr, { scale: 8 }), 'qrcode.png', '*🔰 Kinflux - Bot 🔰*\nㅤㅤㅤㅤ*Being a sub-bot*\n\n*With another phone or on your PC, scan this QR code to become a sub-bot*\n\n*1. Click on the three dots in the top right corner*\n*2. Tap on WhatsApp Web*\n*3. Scan this QR code*\n*This QR code expires in 20 seconds!*\n\n*⚠️ We are not responsible for any misuse or if the number gets sent to support. You have the duty to strictly follow the terms and conditions and privacy policy (type that, and it will be provided to you)*', m)
       setTimeout(() => {
         parent.deleteMessage(m.chat, scan.key)
       }, 30000)
@@ -36,9 +36,9 @@ let handler  = async (m, { conn, args, usedPrefix, command }) => {
     conn.on('group-participants-update', conn.onParticipantsUpdate)
     conn.regenerateQRIntervalMs = null
     conn.connect().then(async ({user}) => {
-      parent.reply(m.chat, '*Conectado exitosamente con WhatsApp*\n*Nota: Esto es temporal*\n*Si el Bot principal se reinicia o se desactiva, todos los sub bots tambien lo haran*\n\n' + JSON.stringify(user, null, 2), m)
+      parent.reply(m.chat, '*Successfully connected with WhatsApp*\n*Note :This is temporary*\n*if the main Bot restarts or gets deactivated, all sub-bots will do the same*\n\n' + JSON.stringify(user, null, 2), m)
       if (auth) return
-      await parent.sendMessage(user.jid, `*Puede iniciar sesión sin el codigo qr con el siguiente mensaje, envialo cuando no funcione el bot y/o haya o no dicho conexion perdida..*\n\n*Puede obtener nuevamente este código QR con col comando #getcode, debe se seguir siendo sub bot para poder recibirlo*`, MessageType.extendedText)
+      await parent.sendMessage(user.jid, `*You can log in without the QR code using the following message. Send it when the bot is not functioning and/or whether there's a lost connection or not..*\n\n*You can get the QR code again by using the command #getcode. You must continue to be a sub-bot in order to receive it.*`, MessageType.extendedText)
       parent.sendMessage(user.jid, `${usedPrefix + command} ${Buffer.from(JSON.stringify(conn.base64EncodedAuthInfo())).toString('base64')}`, MessageType.extendedText)
     })
     setTimeout(() => {
@@ -54,7 +54,7 @@ let handler  = async (m, { conn, args, usedPrefix, command }) => {
         try {
           if (conn.state != 'close') return
           if (conn.user && conn.user.jid)
-            parent.sendMessage(conn.user.jid, `*⚠️ Conexión perdida.. envie el mensaje que se envio al numero donde escaneo el codigo qr*`, MessageType.extendedText)
+            parent.sendMessage(conn.user.jid, `*⚠️ Lost connection.. please send the message that was sent to the number where the QR code was scanned.*`, MessageType.extendedText)
           let i = global.conns.indexOf(conn)
           if (i < 0) return
           delete global.conns[i]
@@ -63,12 +63,12 @@ let handler  = async (m, { conn, args, usedPrefix, command }) => {
       }, 30000)
     })
     global.conns.push(conn)
-  } else throw '*「🤖 𝙏͚͜͝͠𝙝͚͜͝͠𝙚͚͜͝͠ ͚͜͝͠𝙎͚͜͝͠𝙝͚͜͝͠𝙖͚͜͝͠𝙙͚͜͝͠𝙤͚͜͝͠𝙬͚͜͝͠ ͚͜͝͠𝘽͚͜͝͠𝙧͚͜͝͠𝙤͚͜͝͠𝙠͚͜͝͠𝙚͚͜͝͠𝙧͚͜͝͠𝙨͚͜͝͠ ͚͜͝͠-͚͜͝͠ ͚͜͝͠𝘽͚͜͝͠𝙤͚͜͝͠𝙩͚͜͝͠ ͚͜͝͠ 🤖」*\n\n*⚠️ No se puede hacer un bot dentro de un sub bot!*\n*✳️ Mande el comando #jadibot al numero oficial/principal del Bot*\n\n*👉🏻 https://wa.me/' + global.conn.user.jid.split`@`[0] + '?text=#jadibot*\n\n*「🤖 𝙏͚͜͝͠𝙝͚͜͝͠𝙚͚͜͝͠ ͚͜͝͠𝙎͚͜͝͠𝙝͚͜͝͠𝙖͚͜͝͠𝙙͚͜͝͠𝙤͚͜͝͠𝙬͚͜͝͠ ͚͜͝͠𝘽͚͜͝͠𝙧͚͜͝͠𝙤͚͜͝͠𝙠͚͜͝͠𝙚͚͜͝͠𝙧͚͜͝͠𝙨͚͜͝͠ ͚͜͝͠-͚͜͝͠ ͚͜͝͠𝘽͚͜͝͠𝙤͚͜͝͠𝙩͚͜͝͠ ͚͜͝͠  🤖」*'
+  } else throw '*「🤖 𝙏͚͜͝͠𝙝͚͜͝͠𝙚͚͜͝͠ ͚͜͝͠𝙎͚͜͝͠𝙝͚͜͝͠𝙖͚͜͝͠𝙙͚͜͝͠𝙤͚͜͝͠𝙬͚͜͝͠ ͚͜͝͠𝘽͚͜͝͠𝙧͚͜͝͠𝙤͚͜͝͠𝙠͚͜͝͠𝙚͚͜͝͠𝙧͚͜͝͠𝙨͚͜͝͠ ͚͜͝͠-͚͜͝͠ ͚͜͝͠𝘽͚͜͝͠𝙤͚͜͝͠𝙩͚͜͝͠ ͚͜͝͠ 🤖」*\n\n*⚠️ It is not possible to create a bot within a sub-bot!*\n*✳️ Send the command #kinfluxbot to the official/main number of the Bot.*\n\n*👉🏻 https://wa.me/' + global.conn.user.jid.split`@`[0] + '?text=#kinfluxbot*\n\n*「🤖 𝙏͚͜͝͠𝙝͚͜͝͠𝙚͚͜͝͠ ͚͜͝͠𝙎͚͜͝͠𝙝͚͜͝͠𝙖͚͜͝͠𝙙͚͜͝͠𝙤͚͜͝͠𝙬͚͜͝͠ ͚͜͝͠𝘽͚͜͝͠𝙧͚͜͝͠𝙤͚͜͝͠𝙠͚͜͝͠𝙚͚͜͝͠𝙧͚͜͝͠𝙨͚͜͝͠ ͚͜͝͠-͚͜͝͠ ͚͜͝͠𝘽͚͜͝͠𝙤͚͜͝͠𝙩͚͜͝͠ ͚͜͝͠  🤖」*'
 }
-handler.help = ['jadibot']
-handler.tags = ['jadibot']
+handler.help = ['kinfluxbot']
+handler.tags = ['kinfluxbot']
 
-handler.command = /^serbot|jadibot|sersubbot|sersubot$/i
+handler.command = /^subbot|kinfluxbot|sersubbot|sersubot$/i
 handler.prems = false
 handler.private = false
 
