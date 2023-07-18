@@ -4,9 +4,17 @@ if (!(who in global.db.data.users)) throw `✳️ The user is not found in my da
 let pp = './kinfluxbot.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
-let lkr = `❀° ┄──•••───╮
-      𝐊𝐈𝐍𝐅𝐋𝐔𝐗 𝐁𝐎𝐓 𝙈𝙀𝙉𝙐  
-╰───•••──┄ °❀     
+let lkr = `
+╭══〘 ✯✯✯✯✯✯✯✯ 〙═╮
+║═ *kinflux - 𝐁𝐨𝐭*
+║≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+║➤ *✨𝗛ola, ${username}!!*
+║≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+║➤ *bot creator: Kinflux digital* 
+║➤ *Number of creator:* *wa.me/254765777423*                         *wa.me/254110377776 (No Bot)*
+║➤ *threads:* *https://threads.net/@Kinfluxdigital
+║≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+╰══╡✯✯✯✯✯✯✯✯╞══╯
 ┌─⊷ *KINFLUX BOT*
 ▢ .blocklist
 ▢ .info
