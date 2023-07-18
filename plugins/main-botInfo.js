@@ -46,34 +46,29 @@ let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './Guru.jpg')
 let user = global.db.data.users[who]
   
 let infobt = `
-≡ *INFO BOT*
-  
-*STATE*
-▢ *${groupsIn.length}* GROUP CHATS
-▢ *${groupsIn.length}* united groups
-▢ *${groupsIn.length - groupsIn.length}* abandoned groups
-▢ *${chats.length - groupsIn.length}* private chats
-▢ *${chats.length}* Total Chats
+╠═〘 *Information about kinflux Bot* 〙 ═
+╠
+╠➥ [🤴🏻] Creador del Bot: *Kinflux Digital*
+╠➥ [#️⃣] Number of creator: *+254765777423* 
+╠➥ [🎳] Prefix: *${usedPrefix}*
+╠➥ [👨‍🦯] Velocity: *${speed} miliseconds*
+╠➥ [🔐] private chats: *${chats.length - groups.length}*
+╠➥ [🦜] GROUP CHATS: *${groups.length}* 
+╠➥ [💡] Chat Totals: *${chats.length}* 
+╠➥ [🌐] abandoned groups ${groupsIn.length - groupsIn.length}* 
+╠➥ [🚀] Time active: *${uptime}*
+╠➥ [🎩] Usuarios: *${totalreg} numeros*
+╠➥ [🔋] Bateria: *${conn.battery ? `${conn.battery.value}%* *${conn.battery.live ? '🔌 Cargando...*' : '⚡ Desconectado*'}` : 'Desconocido*'}
+╠➥ [📲] github script : https://github.com/diggilly/Kinflux_bot_god_v2
+╠➥ [💯] support group: https://chat.whatsapp.com/KggVmnH7ki6HoyD0025gDD
+╠➥ [🪀] version of whatsapp: *${conn.user.phone.wa_version}*
+╠➥ [🤖] Bots secundarios active: *${totaljadibot.length}*
+╠➥ [⚡] RAM:* ${format(totalmem() - freemem())} / ${format(totalmem())}
+╠➥  [🔵] FreeRAM:* ${format(freemem())}
+        ╠➥NodeJS memory
+        ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
 
-*≡ OWNER*
-  *KINFLUX DIGITAL*
-▢ whatsapp group link :
-  • https://chat.whatsapp.com/KggVmnH7ki6HoyD0025gDD
-  
-▢ GitHub :
-  • https://github.com/kinflux_bot_God_v2
-▢ Telegram : 
-  • t.me/kinflux_bot 
-▢ owner number : 
-  • wa.me/254110077535
-  • wa.me/254110377776
-
- *≡ S E R V E R*
-*🛑 RAM:* ${format(totalmem() - freemem())} / ${format(totalmem())}
-*🔵 FreeRAM:* ${format(freemem())}
-
-*≡  NodeJS memory *
-${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
+╠═〘 *Kinflux - Bot* 〙 ═
 `
 conn.sendFile(m.chat, pp, 'prefil.jpg', infobt, m, false, { mentions: [who] })
 m.react(done)
@@ -81,6 +76,6 @@ m.react(done)
 }
 handler.help = ['info']
 handler.tags = ['main']
-handler.command = ['info', 'infobot', 'botinfo']
+handler.command = ['info', 'infobot', 'kinfluxbotinfo']
 
 export default handler
