@@ -4,12 +4,12 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     }
     conn.vote = conn.vote ? conn.vote : {}
     let id = m.chat
-    if (id in conn.vote) return conn.send2Button(m.chat, `Masih ada voting di chat ini!`, '© wabot-aq', 'Cek', `${usedPrefix}cekvote`, 'Hapus', `${usedPrefix}-vote`, conn.vote[id][3])
+    if (id in conn.vote) return conn.send2Button(m.chat, `Yes, there is still voting i!`, '© Kinflux bot', 'Cek', `${usedPrefix}cekvote`, 'Hapus', `${usedPrefix}-vote`, conn.vote[id][3])
     conn.vote[id] = [
         text,
         [],
         [],
-        await conn.send2Button(m.chat, 'Voting dimulai', '© wabot-aq', 'Upvote', `${usedPrefix}upvote`, 'Devote', `${usedPrefix}devote`, m)
+        await conn.send2Button(m.chat, 'Voting dimulai', '© Kinflux bot', 'Upvote', `${usedPrefix}upvote`, 'Devote', `${usedPrefix}devote`, m)
     ]
 }
 handler.help = ['mulaivote [alasan]']
