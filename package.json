@@ -20,21 +20,21 @@
         "js-whatsapp",
         "whatsapp",
         "guru-bot",
-        "GURU-bot-md",
+        "kinflux-bot-md",
         "multi-device",
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/diggilly/Kinflux_bot_God",
+    "homepage": "https://github.com/diggilly/kinflux_bot_god_v2",
     "author": {
         "name": "kinflux digital"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/diggilly/Kinflux_bot_God.git"
+        "url": "git+https://github.com/diggilly/kinflux_bot_god_v2.git"
     },
     "bugs": {
-        "url": "https://github.com/diggilly/Kinflux_bot_God/issues"
+        "url": "https://github.com/diggilly/kinflux_bot_god_v2/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
@@ -93,7 +93,7 @@
         "api-dylux": "^1.2.8",
         "@vitalets/google-translate-api": "^8.0.0",
         "yargs": "^17.6.0",
-        "ytdl-core": "^4.11.2",
+        "ytdl-core": "^4.11.5",
          "wa-sticker-formatter": "^4.3.2"
        
     }
